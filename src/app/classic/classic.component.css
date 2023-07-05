@@ -1,50 +1,59 @@
-.home__container {
+.classic__container {
   width: 100%;
   height: fit-content;
+  background-color:#FFF;
 }
-.home__wrapper {
+.classic__wrapper {
   max-width: 1440px;
-  padding: 3px 15px;
+  padding: 8px 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  background-color:#FFF;
 }
 .title__box {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap:30px;
+  gap: 30px;
+  background-color:#FFF;
 }
 .title-image {
   flex-shrink: 0;
-  height: 390px;
-  width: 390px;
+  height: 520px;
+  width: 330px;
   padding: 15px;
-
+  order: 2;
+  background-color:#FFF;
 }
 .title-img {
-
+  background-color: #FFFFFF;
 }
 .title-text__box {
   display: flex;
   align-items: center;
-  justify-content: center;
+  background-color:#FFF;
   gap: 15px;
-  height: 330px;
-  width: 570px;
+  height: 480px;
+  width: 370px;
   padding: 15px;
+  order: 1;
 }
 
 .title-svg {
   height: 60px;
   width: 60px;
+  background-color:#FFF;
 }
 .title {
   font-size: 1.7em;
+  color: #000000;
+  background-color:#FFF;
 }
 .torrent {
   color: #0ab200;
+  background-color:#FFF;
 }
 .subtitle__box {
   text-align: center;
@@ -53,16 +62,20 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  height: 330px;
-  width: 700px;
+  height: 500px;
+  width: 370px;
+  background-color:#FFF;
 }
 .title-logo {
   display: flex;
   align-items: center;
+  background-color:#FFF;
 }
 
-.subtitle-first, .subtitle-second {
+.subtitle-text {
   display: block;
+  color: black;
+  background-color:#FFF;
 }
 .button__box {
   display: flex;

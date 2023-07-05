@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+*, body, html {
+  color: #FFF;
+  background-color:#242433;
+  font-family: 'Roboto', 'Roboto', Roboto, 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+div, p, input, select, button, form, span, a, ul, li {
+  list-style-type: none;
+  text-decoration: none;
+  color: inherit;
+}
