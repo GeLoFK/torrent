@@ -54,58 +54,6 @@
   padding: 5px;
   cursor: pointer;
 }
-.dropdown-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 1;
-  display: none;
-}
-.dropdown-overlay.active {
-  display: block;
-  overflow-y: auto;
-  pointer-events: auto;
-}
-.dropdown-open.slideInRight {
-  display: block;
-  transform: translateX(0);
-}
-@keyframes slideIn {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-.dropdown-open {
-  overflow-y: auto;
-  overflow-x: hidden;
-  position: fixed;
-  top: 66px;
-  right: 0;
-  bottom: 0;
-  left: auto;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 10px;
-  width: 436px;
-  z-index: 1000;
-  display: block;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.dropdown-open.active {
-  display: block;
-  background-color: #fff;
-  opacity: 1;
-}
 
 .lan__box {
   display: flex;
@@ -138,9 +86,12 @@
 
 .dropdown-menu {
   position: absolute;
-  top: 0;
-  right: 0;
-  background-color: #fff;
+  top: 61px;
+  right: -30px;
+  background-color: #ff0000;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 436px;
 }
 
 .dropdown-close {

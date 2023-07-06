@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import {trigger, transition, style, animate, state} from '@angular/animations';
 
 interface Language {
   id: string;
@@ -14,17 +14,19 @@ interface Language {
   styleUrls: ['./header.component.css'],
 
   animations: [
-    trigger('dropdownAnimation', [
-      state('void', style({ opacity: 0, transform: 'translateY(-20px)' })),
-      state('slideInRight', style({ opacity: 1, transform: 'translateY(0)' })),
-      state('slideInRight', style({ transform: 'translateX(100%)' })),
-      transition('void => slideInRight', animate('200ms ease-in')),
-      transition('slideInRight => void', animate('200ms ease-out'))
-    ])
+    trigger('slider', [
+      transition(':enter', [
+        style({ transform: 'translateX(100%)' }),
+        animate('300ms ease-out', style({ transform: 'translateX(0)' })),
+      ]),
+      transition(':leave', [
+        animate('300ms ease-out', style({ transform: 'translateX(100%)' })),
+      ]),
+    ]),
   ]
 })
 export class HeaderComponent {
-  isDropdownOpen = false;
+  isOpen = false;
 
   languages: Language[] = [
     { id: 'mainnav-lang-en', hreflang: 'en', label: 'English', href: '/' },
@@ -35,11 +37,7 @@ export class HeaderComponent {
     { id: 'mainnav-lang-es', hreflang: 'ua', label: 'Український', href: '/intl/ua/' }
   ];
 
-  toggleDropdown() {
-    this.isDropdownOpen = !this.isDropdownOpen;
-  }
-
-  closeDropdown() {
-    this.isDropdownOpen = false;
+  openDropdown() {
+    this.isOpen = !this.isOpen;
   }
 }

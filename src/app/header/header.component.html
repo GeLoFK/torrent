@@ -9,31 +9,17 @@
       </p>
     </div>
     <div class="nav__box">
+      <!-- Navigation links -->
       <a class="link" routerLink="/product">Продукты</a>
       <a class="link" routerLink="/about">Форум</a>
-      <a id="mainnav-language" class="link-lan" (click)="toggleDropdown()">Язык</a>
-      <div class="dropdown-overlay" [class.active]="isDropdownOpen" (click)="closeDropdown()" [@dropdownAnimation]="'fade'"></div>
-      <div id="dropdown-menu" class="dropdown-open" [class.active]="isDropdownOpen" [@dropdownAnimation]="'slideInRight'">
-        <div class="lan__box">
-          <div class="lan-row__box">
-            <div class="col-6">
-              <div class="lan">
-                <a *ngFor="let language of languages.slice(0, languages.length/2)" [id]="language.id" [hreflang]="language.hreflang"
-                   class="dropdown-item language" [href]="language.href"
-                   (click)="closeDropdown()">{{ language.label }}</a>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="lan">
-                <a *ngFor="let language of languages.slice(languages.length/2)" [id]="language.id" [hreflang]="language.hreflang"
-                   class="dropdown-item language" [href]="language.href"
-                   (click)="closeDropdown()">{{ language.label }}</a>
-              </div>
-            </div>
-          </div>
-          <div class="dropdown-close" (click)="closeDropdown()">X</div>
-        </div>
+      <a id="mainnav-language" class="link-lan" (click)="openDropdown()">Язык</a>
+
+      <!-- Dropdown menu -->
+      <div class="dropdown-menu" *ngIf="isOpen" @slider>
+        <div class="content">
+          <h2>Hellos</h2>
         </div>
       </div>
     </div>
+  </div>
 </header>
