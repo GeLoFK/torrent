@@ -69,6 +69,20 @@
   overflow-y: auto;
   pointer-events: auto;
 }
+.dropdown-open.slideInRight {
+  display: block;
+  transform: translateX(0);
+}
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 .dropdown-open {
   overflow-y: auto;
   overflow-x: hidden;
@@ -82,12 +96,15 @@
   padding: 10px;
   width: 436px;
   z-index: 1000;
-  display: none;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .dropdown-open.active {
   display: block;
   background-color: #fff;
+  opacity: 1;
 }
 
 .lan__box {

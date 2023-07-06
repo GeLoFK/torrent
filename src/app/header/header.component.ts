@@ -16,9 +16,10 @@ interface Language {
   animations: [
     trigger('dropdownAnimation', [
       state('void', style({ opacity: 0, transform: 'translateY(-20px)' })),
-      state('*', style({ opacity: 1, transform: 'translateY(0)' })),
-      transition('void => *', animate('200ms ease-in')),
-      transition('* => void', animate('200ms ease-out'))
+      state('slideInRight', style({ opacity: 1, transform: 'translateY(0)' })),
+      state('slideInRight', style({ transform: 'translateX(100%)' })),
+      transition('void => slideInRight', animate('200ms ease-in')),
+      transition('slideInRight => void', animate('200ms ease-out'))
     ])
   ]
 })

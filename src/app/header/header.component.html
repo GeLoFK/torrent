@@ -12,8 +12,8 @@
       <a class="link" routerLink="/product">Продукты</a>
       <a class="link" routerLink="/about">Форум</a>
       <a id="mainnav-language" class="link-lan" (click)="toggleDropdown()">Язык</a>
-      <div class="dropdown-overlay" [class.active]="isDropdownOpen" (click)="closeDropdown()"></div>
-      <div id="dropdown-menu" class="dropdown-open" [class.active]="isDropdownOpen">
+      <div class="dropdown-overlay" [class.active]="isDropdownOpen" (click)="closeDropdown()" [@dropdownAnimation]="'fade'"></div>
+      <div id="dropdown-menu" class="dropdown-open" [class.active]="isDropdownOpen" [@dropdownAnimation]="'slideInRight'">
         <div class="lan__box">
           <div class="lan-row__box">
             <div class="col-6">
