@@ -11,24 +11,29 @@
     <div class="nav__box">
       <a class="link" routerLink="/product">Продукты</a>
       <a class="link" routerLink="/about">Форум</a>
-      <a id="mainnav-language" class="link" (click)="toggleDropdown()">Язык</a>
-      <div id="dropdown-menu" class="navPopup-module--popup--1iG_D" [class.active]="isDropdownOpen"
-           (click)="closeDropdown()">
-        <div class="navPopup-module--popupInner--2hvxr">
-          <div class="container h-100 position-relative p-0 mb-5 pb-5 pt-4 pt-lg-0">
-            <div class="row px-5 py-5 mx-3">
-              <div class="col-6 py-3 px-0">
-                <div><a hreflang="en" id="mainnav-lang-en" class="dropdown-item language" href="/">English</a></div>
-                <div><a hreflang="de" id="mainnav-lang-de" class="dropdown-item language" href="/intl/de/">Deutsch</a></div>
-                <div><a hreflang="es" id="mainnav-lang-es" class="dropdown-item language" href="/intl/es/">Español</a></div>
+      <a id="mainnav-language" class="link-lan" (click)="toggleDropdown()">Язык</a>
+      <div class="dropdown-overlay" [class.active]="isDropdownOpen" (click)="closeDropdown()"></div>
+      <div id="dropdown-menu" class="dropdown-open" [class.active]="isDropdownOpen">
+        <div class="lan__box">
+          <div class="lan-row__box">
+            <div class="col-6">
+              <div class="lan">
+                <a *ngFor="let language of languages.slice(0, languages.length/2)" [id]="language.id" [hreflang]="language.hreflang"
+                   class="dropdown-item language" [href]="language.href"
+                   (click)="closeDropdown()">{{ language.label }}</a>
               </div>
-              <div class="col-6 py-3 text-right">
-                <a class="close-icon" (click)="closeDropdown()">&times;</a>
+            </div>
+            <div class="col-6">
+              <div class="lan">
+                <a *ngFor="let language of languages.slice(languages.length/2)" [id]="language.id" [hreflang]="language.hreflang"
+                   class="dropdown-item language" [href]="language.href"
+                   (click)="closeDropdown()">{{ language.label }}</a>
               </div>
             </div>
           </div>
+          <div class="dropdown-close" (click)="closeDropdown()">X</div>
+        </div>
         </div>
       </div>
     </div>
-  </div>
 </header>
