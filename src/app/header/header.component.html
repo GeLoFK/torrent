@@ -8,16 +8,16 @@
         µTorrent
       </p>
     </div>
-    <div class="nav__box">
-      <!-- Navigation links -->
+    <div class="nav__box" >
       <a class="link" routerLink="/product">Продукты</a>
       <a class="link" routerLink="/about">Форум</a>
       <a id="mainnav-language" class="link-lan" (click)="openDropdown()">Язык</a>
-
-      <!-- Dropdown menu -->
+      <div class="ghost__box" [ngClass]="{ active: isOpen }"></div>
       <div class="dropdown-menu" *ngIf="isOpen" @slider>
         <div class="content">
-          <h2>Hellos</h2>
+          <a hreflang="en" id="mainnav-lang-en" *ngFor="let item of languages.languages" class="dropdown-item language" href="/">
+            {{ item.label }}
+          </a>
         </div>
       </div>
     </div>

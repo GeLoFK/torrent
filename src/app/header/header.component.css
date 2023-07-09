@@ -1,53 +1,92 @@
 .nav__container {
   max-width: 100%;
   height: fit-content;
-  background-color:#FFF;
+  background-color: #FFF;
 }
+
+.ghost__box {
+  position: fixed;
+  top: 100px; /* Adjust the top position based on your needs */
+  left: 0;
+  width: 100%;
+  height: calc(100% - 100px); /* Adjust the height based on your needs */
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.ghost__box.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.page-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+
+.page-overlay.active {
+  display: block;
+}
+
 .nav__wrapper {
   max-width: 1440px;
   padding: 7px 30px;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
-  background-color:#FFF;
+  background-color: #FFF;
 }
+
 .logo__box {
   display: flex;
   gap: 5px;
   align-items: center;
-  background-color:#FFF;
- }
-.logo-svg {
-  background-color:#FFF;
+  background-color: #FFF;
 }
+
+.logo-svg {
+  background-color: #FFF;
+}
+
 .logo-img {
   height: 50px;
   width: 50px;
 }
+
 .title {
   font-size: 30px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   color: #0ab200;
-  background-color:#FFF;
+  background-color: #FFF;
 }
+
 .nav__box {
   display: flex;
   gap: 30px;
   align-items: center;
   position: relative;
   color: black;
-  background-color:#FFF;
+  background-color: #FFF;
 }
+
 .link {
   font-size: 17px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  background-color:#FFF;
+  background-color: #FFF;
 }
-
 
 .link-lan {
   background-color: #fff;
@@ -66,7 +105,7 @@
 .lan-row__box {
   display: flex;
   padding: 16px;
-  gap:15px;
+  gap: 15px;
   background-color: white;
 }
 
@@ -82,16 +121,25 @@
   color: black;
   background-color: white;
   text-decoration: none;
+  width: 200px;
 }
 
 .dropdown-menu {
   position: absolute;
   top: 61px;
   right: -30px;
-  background-color: #ff0000;
-  border: 1px solid #ccc;
-  padding: 10px;
   width: 436px;
+  height: 300px;
+  background-color: #FFF;
+  padding: 48px;
+  z-index: 999;
+}
+
+.content {
+  font-size: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #fff;
 }
 
 .dropdown-close {
@@ -107,4 +155,3 @@
 .dropdown-close:hover {
   color: #f00;
 }
-
