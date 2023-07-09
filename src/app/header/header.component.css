@@ -6,22 +6,20 @@
 
 .ghost__box {
   position: fixed;
-  top: 100px; /* Adjust the top position based on your needs */
+  top: 100px;
   left: 0;
   width: 100%;
-  height: calc(100% - 100px); /* Adjust the height based on your needs */
+  height: calc(100% - 100px);
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
   z-index: 999;
 }
-
 .ghost__box.active {
   opacity: 1;
   pointer-events: auto;
 }
-
 .page-overlay {
   position: fixed;
   top: 0;
@@ -79,7 +77,18 @@
   color: black;
   background-color: #FFF;
 }
-
+.product-ghost__box {
+  position: absolute;
+  top: 0; /* Установите top равным 0, чтобы убрать отступ */
+  left: 0;
+  width: 100%;
+  height: calc(100% - 100px);
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
 .link {
   font-size: 17px;
   font-style: normal;
@@ -115,7 +124,7 @@
   color: #fff;
 }
 
-.dropdown-item {
+.dropdown-item-language {
   display: block;
   padding: 5px;
   color: black;
@@ -123,18 +132,25 @@
   text-decoration: none;
   width: 200px;
 }
+.dropdown-item-product {
+  display: block;
+  padding: 5px;
+  color: black;
+  background-color: white;
+  text-decoration: none;
+  width: 220px;
+}
 
 .dropdown-menu {
   position: absolute;
   top: 61px;
   right: -30px;
-  width: 436px;
+  width: 440px;
   height: 300px;
   background-color: #FFF;
   padding: 48px;
   z-index: 999;
 }
-
 .content {
   font-size: 30px;
   display: flex;

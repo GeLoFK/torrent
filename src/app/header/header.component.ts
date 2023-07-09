@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { Languages } from "../../../constants/language";
+import { Products } from "../../../constants/product";
 
 @Component({
   selector: 'app-header',
@@ -26,14 +27,26 @@ import { Languages } from "../../../constants/language";
   ],
 })
 export class HeaderComponent {
-  isOpen = false;
+  isLanguageOpen = false;
+  isProductOpen = false;
   languages = new Languages();
+  products = new Products();
 
-  openDropdown() {
-    this.isOpen = !this.isOpen;
+  openLanguageDropdown() {
+    this.isLanguageOpen = !this.isLanguageOpen;
+    this.isProductOpen = false;
   }
 
-  closeDropdown() {
-    this.isOpen = false;
+  closeLanguageDropdown() {
+    this.isLanguageOpen = false;
+  }
+
+  openProductDropdown() {
+    this.isProductOpen = !this.isProductOpen;
+    this.isLanguageOpen = false;
+  }
+
+  closeProductDropdown() {
+    this.isProductOpen = false;
   }
 }
